@@ -1,8 +1,8 @@
 const playerImage = new Image();
-playerImage.src = './images/player/TestGracz.png';
+playerImage.src = './images/player/Player.png';
 
 const treeImage = new Image();
-treeImage.src = './images/objects/TestDrzewo.png';
+treeImage.src = './images/objects/Tree.png';
 const bushImage = new Image();
 bushImage.src = './images/objects/Bush.png';
 const boulderImage = new Image();
@@ -12,12 +12,12 @@ firePitImage.src = './images/objects/FirePit.png';
 
 
 
-const eqHand = new Image();
+const eqHandImage = new Image();
 eqHand.src = './images/gui/eqHand.png';
-const eqBody = new Image();
-eqBody.src = './images/gui/eqBody.png';
-const eqHead = new Image();
-eqHead.src = './images/gui/eqHead.png';
+const eqBodyImage = new Image();
+eqBodyImage.src = './images/gui/eqBody.png';
+const eqHeadImage = new Image();
+eqHeadImage.src = './images/gui/eqHead.png';
 const arrowRightImage = new Image();
 arrowRightImage.src = './images/gui/ArrowRight.png'
 
@@ -36,10 +36,10 @@ axeImage.src = './images/items/Axe.png'
 const pickaxeImage = new Image();
 pickaxeImage.src = './images/items/Pickaxe.png'
 
-const numbers = new Image();
-numbers.src = './images/gui/liczby.png';
-const crafting = new Image();
-crafting.src ='./images/gui/crafting.png'
+const numbersImage = new Image();
+numbersImage.src = './images/gui/liczby.png';
+const craftingImage = new Image();
+craftingImage.src ='./images/gui/crafting.png'
 const foodImage = new Image();
 foodImage.src = './images/gui/Food.png';
 const hearthImage = new Image();
@@ -830,7 +830,7 @@ class Item {
             const digit = parseInt(numberStr[numberStr.length-(i+1)]);
 
             ctx.drawImage(
-                numbers,
+                numbersImage,
                 digit * digitWidth, 0,
                 digitWidth, digitHeight,
                 x - (i + 1) * digitWidth * scaleFactor + cellWidth,
@@ -1090,21 +1090,21 @@ function drawEQ() {
         g1.hand.drawInEQ(ctx, cellWidth * 18 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,);
     } else {
         ctx.drawImage(
-            eqHand,cellWidth * 18 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,
+            eqHandImage,cellWidth * 18 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,
         );
     }
     if (g1.body) {
         g1.body.drawInEQ(ctx, cellWidth * 19 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,);
     } else {
         ctx.drawImage(
-            eqBody,cellWidth * 19 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,
+            eqBodyImage,cellWidth * 19 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,
         );
     }
     if (g1.head) {
         g1.head.drawInEQ(ctx, cellWidth * 20 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,);
     } else {
         ctx.drawImage(
-            eqHead,cellWidth * 20 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,
+            eqHeadImage,cellWidth * 20 + cellWidth / 2, canvas.height - cellWidth * 3 / 2, cellWidth, cellWidth,
         );
     }
     
@@ -1149,14 +1149,14 @@ function drawCrafting() {
         ctx.fillStyle = "gray";
         ctx.fillRect(0, cellWidth * 5 / 2, cellWidth, cellWidth);
         ctx.drawImage(
-            crafting, 0, 0, cellWidth / 3, cellWidth / 3, 0, cellWidth * 5 / 2, cellWidth, cellWidth,
+            craftingImage, 0, 0, cellWidth / 3, cellWidth / 3, 0, cellWidth * 5 / 2, cellWidth, cellWidth,
         );
         ctx.strokeRect(0, cellWidth * 5 / 2, cellWidth, cellWidth);
     } else {
         ctx.fillStyle = "gray";
         ctx.fillRect(cellWidth * 6, cellWidth*5/2, cellWidth, cellWidth);
         ctx.drawImage(
-            crafting, 0, 0, cellWidth/3, cellWidth / 3, cellWidth * 6, cellWidth * 5 / 2, cellWidth, cellWidth,
+            craftingImage, 0, 0, cellWidth/3, cellWidth / 3, cellWidth * 6, cellWidth * 5 / 2, cellWidth, cellWidth,
         );
         ctx.strokeRect(cellWidth * 6, cellWidth * 5 / 2, cellWidth, cellWidth);
 
@@ -1607,15 +1607,30 @@ function initializeCanvas() {
         }
     }
 
-    playerImage.onload = imageLoaded;
+    arrowRightImage.onload = imageLoaded
+    craftingImage.onload = imageLoaded
+    eqHandImage.onload = imageLoaded;
+    eqBodyImage.onload = imageLoaded;
+    eqHeadImage.onload = imageLoaded;
+    foodImage.onload = imageLoaded;
+    hearthImage.onload = imageLoaded;
+    numbersImage.onload = imageLoaded;
+    lightImage.onload = imageLoaded;
+
+    aCornImage.onload = imageLoaded;
+    axeImage.onload = imageLoaded;
+    pickaxeImage.onload = imageLoaded;
+    rockImage.onload = imageLoaded;
+    stickImage.onload = imageLoaded;
+    woodImage.onload = imageLoaded;
+
+    boulderImage.onload = imageLoaded;
+    bushImage.onload = imageLoaded;
+    firePitImage.onload = imageLoaded;
     treeImage.onload = imageLoaded;
-    boulderImage.onload = imageLoaded
 
-    eqHand.onload = imageLoaded;
-    eqBody.onload = imageLoaded;
-    eqHead.onload = imageLoaded;
+    playerImage.onload = imageLoaded;
 
-    numbers.onload = imageLoaded;
 }
 function isVisible(thing, buffer = 2) {
     // Oblicz obszar widoczny z uwzględnieniem offsetu i dodatkowego marginesu
