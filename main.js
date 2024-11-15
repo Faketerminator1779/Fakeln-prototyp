@@ -13,7 +13,7 @@ firePitImage.src = './images/objects/FirePit.png';
 
 
 const eqHandImage = new Image();
-eqHand.src = './images/gui/eqHand.png';
+eqHandImage.src = './images/gui/eqHand.png';
 const eqBodyImage = new Image();
 eqBodyImage.src = './images/gui/eqBody.png';
 const eqHeadImage = new Image();
